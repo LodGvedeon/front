@@ -3,12 +3,62 @@ import type { NextPage } from 'next'
 import { useState, useEffect, useRef, useContext } from 'react'
 
 
-export interface Product {
+/*
+class User {
+  username!: string
+  age: number = 19
+
+  constructor (username: string) {
+    this.username = username
+  }
+
+  getInfo () {
+    return `${this.username} : ${this.age}`
+  }
+}
+*/
+
+interface User {
+  username: string
+  age: number
+}
+
+const user: User = {
+  username: "asdff",
+  age: 12
+}
+
+interface Product {
     title: string
     images: string[]
     category: string
     description: string
-  }
+}
+
+const product = {
+  title: "askl;dfja",
+  images: [
+    "asdfasdf",
+    "asdfasdf",
+    "asdfasdf",
+  ]
+}
+
+// axios - http client
+// axios --------------------> internet
+// get | post | put | delete
+
+/*
+ * id: 1 title: My cool product price: 123
+ * GET /products  ----------> backend ----> DB <--------------
+ * PUT|UPDATE /product/1 id: 1 title: Another cool product price: 321 ----------> backend ------> ->DB 
+ * DELETE /product/1 -----------> backend -> x DB
+ * {
+ * fetch('https://image.jpg')
+ */
+
+// response = await axios.get('https://asdff/products')
+// setProducts(response)
 
 const ProductCard = (
     {product}: {product: Product}
@@ -84,7 +134,7 @@ useEffect(() => {
 return ( 
     <div className="h-screen  static px-5 py-3">
         <div>
-            <button onClick={() => drawElements()} onMou>Жми</button>
+            <button onClick={() => drawElements()}>Жми</button>
             <canvas ref={cv}/>
             <div className='grid grid-cols-4 gap-5 mt-7'>
             {products.map( function(item, index) {
