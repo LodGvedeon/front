@@ -1,3 +1,4 @@
+import { Tooltip } from '@chakra-ui/react'
 import axios from 'axios'
 import type { NextPage } from 'next'
 import { useState, useEffect, useRef, useContext } from 'react'
@@ -75,7 +76,9 @@ const ProductCard = (
                 className='w-full h-20 object-contain'
             />
             <div className='mt-4 flex justify-center'>{title}</div>
-            <div className='bg-gray-600 bg-opacity-80 rounded-sm text-white text-xs p-2  object-right-bottom'>подсказка</div>
+            <Tooltip label={description} placement="top">
+              <div>show description</div>
+            </Tooltip>
         </div>
         
     )
