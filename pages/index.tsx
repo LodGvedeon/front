@@ -40,7 +40,6 @@ const incrementCounter = () => {
 const toggleLoad = () => {
   setLoading(!Loading)
 }
-
 interface IPlayerCardProps {
   currentPlayer: Player
 }
@@ -102,5 +101,9 @@ return (
 
 
 }
+
+/*
+"Ранобэ Повелитель тайн - одобряю"
+*/
 
 export default Main
