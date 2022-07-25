@@ -17,7 +17,6 @@ class User {
     return `${this.username} : ${this.age}`
   }
 }
-*/
 
 interface User {
   username: string
@@ -28,22 +27,7 @@ const user: User = {
   username: "asdff",
   age: 12
 }
-
-interface Product {
-    title: string
-    images: string[]
-    category: string
-    description: string
-}
-
-const product = {
-  title: "askl;dfja",
-  images: [
-    "asdfasdf",
-    "asdfasdf",
-    "asdfasdf",
-  ]
-}
+*/
 
 // axios - http client
 // axios --------------------> internet
@@ -61,6 +45,14 @@ const product = {
 // response = await axios.get('https://asdff/products')
 // setProducts(response)
 
+
+interface Product {
+    title: string
+    images: string[]
+    category: string
+    description: string
+}
+
 const ProductCard = (
     {product}: {product: Product}
 ) => {
@@ -77,7 +69,7 @@ const ProductCard = (
             />
             <div className='mt-4 flex justify-center'>{title}</div>
             <Tooltip label={description} placement="top">
-              <div>show description</div>
+              <div className='flex justify-center hover:bg-teal-500 duration-300'>show description</div>
             </Tooltip>
         </div>
         
@@ -152,7 +144,6 @@ return (
     </div> 
 ) 
 }
-
 
 
 export default ImagePage
